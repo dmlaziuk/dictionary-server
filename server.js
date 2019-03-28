@@ -43,7 +43,8 @@ var downloadDictionary = (url, file, callback) => {
     });
   }).on('error', function(err) {
     fs.unlink(file);
-    if (callback) cb(err.message);
+    console.log(err.message);
+    if (callback) callback(err);
   });
 };
 
